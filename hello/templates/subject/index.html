@@ -8,6 +8,18 @@
 
 <body>
 	<h1>itcast says...</h1>
+	<a href="/subject/add_subject/">Add a New Subject</a><br /> 
+	{% if categories %}
+		<ul>
+			{% for subject in categories %}
+			<li>
+			<a href="/subject/showsubject/{{ subject.slug }}">{{ subject.name }}</a>
+			</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<strong>There are no categories present.</strong>
+	{% endif %}
 	hello world! <strong> {{ boldmessage }} </strong><br />
 	<a href="/subject/about/">About</a><br />
 	<img src="{% static "images/a.png" %}" alt="Picture of jordan" />
